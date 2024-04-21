@@ -16,17 +16,8 @@ import numpy as np
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
 
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #000000;
-        
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+st.beta_set_page_config(page_title="SPAM EMAIL DETECTOR", page_icon="CyberBlockLogo.png", layout="centered", initial_sidebar_state="auto", background_color="#000000")
+
 hide_st_style = """
             <style>
             .stTitle {margin-bottom: -10px;}
@@ -57,8 +48,7 @@ cv = pickle.load(open('vectorizer.pkl', 'rb'))
 def main():
     # Adjust the width of the logo column as needed
     logo_col, title_col = st.columns([0.2, 1])  
-    st.markdown('<link rel="shortcut icon" type="image/png" href="CyberBlockLogo.png">', unsafe_allow_html=True)
-
+    
     with logo_col:
         # Adjust width as needed
         st.image("CyberBlockLogo.png", width=100)  
