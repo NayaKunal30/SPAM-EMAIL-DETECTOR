@@ -67,8 +67,12 @@ def main():
                 
     else:
         st.write(':green[Spam Email Detection]')
+        st.write("            ")
         st.write("Filter out Suspicious Emails")
+        st.write("            ")
         st.write('Filter out you Suspicious By using this Spam Mail Detector Tool that will tell You Weather a Email is a Malicious Email or not. This Spam Email detector saves users valuable time and enhances productivity by ensuring that only relevant and legitimate messages reach their inboxes. Moreover, they serve as a frontline defense against various cyber threats, such as phishing attempts, malware distribution, and scams, thereby bolstering security and protecting sensitive information. Ultimately, This Email Spam detector fosters a positive email experience by delivering a clean and trustworthy inbox, thereby enhancing user satisfaction and trust in email communication.')
+        st.write("            ")
+        st.write("                                               &copy 2024-MAKQUARE                                                         ")
 
 main()
 
