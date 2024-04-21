@@ -40,9 +40,7 @@ hide_st_style = """
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
-# Set favicon with a custom logo (PNG)
-favicon_url = "CyberBlockLogo.png"
-st.set_page_config(page_title="SPAM EMAIL DETECTOR", page_icon=favicon_url)
+
 
 # Load the model and CountVectorizer
 model = pickle.load(open('model.pkl', 'rb'))
@@ -51,6 +49,7 @@ cv = pickle.load(open('vectorizer.pkl', 'rb'))
 def main():
     # Adjust the width of the logo column as needed
     logo_col, title_col = st.columns([0.2, 1])  
+    st.markdown('<link rel="shortcut icon" type="image/png" href="CyberBlockLogo.png">', unsafe_allow_html=True)
 
     with logo_col:
         # Adjust width as needed
