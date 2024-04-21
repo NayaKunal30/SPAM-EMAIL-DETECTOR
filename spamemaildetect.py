@@ -15,11 +15,10 @@ import numpy as np
 # def speak(text):
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
+
 hide_st_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
+            
             .stTitle {margin-bottom: -10px;}
             .stMarkdown {margin-top: -20px;}
             .logo-container {
@@ -35,9 +34,15 @@ hide_st_style = """
                 text-align: center;
                 padding: 10px 0;
             }
+            [theme]
+            primaryColor = "#00FFFB"
+            backgroundColor = "#000000"
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
+# Set favicon with a custom logo (PNG)
+favicon_url = "CyberBlockLogo.png"
+st.beta_set_page_config(page_title="SPAM EMAIL DETECTOR", page_icon=favicon_url)
 
 # Load the model and CountVectorizer
 model = pickle.load(open('model.pkl', 'rb'))
