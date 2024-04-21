@@ -22,19 +22,19 @@ cv = pickle.load(open('vectorizer.pkl', 'rb'))
 
 def main():
     # Adjust the width of the logo column as needed
-    logo_col, title_col = st.columns([0.2,1])  
+    logo_col, title_col = st.columns([0.2, 1])  
 
     with logo_col:
         # Adjust width as needed
         st.image("CyberBlockLogo.png", width=100)  
 
     with title_col:
-        
         st.title(" :violet[SPAM EMAIL DETECTOR]")
-        st.write(" :green[Build By MAKSQUARE]")
+        st.write("Build By MAKSQUARE")
 
-    activities = ["SPAM EMAIL DETECTION", "About EMAIL SPAM DETECTOR"]
+    activities = ["SPAM EMAIL DETECTION", "About"]
     choice = st.sidebar.selectbox("CHOOSE YOUR REQUIREMENT", activities)
+    
     if choice == "SPAM EMAIL DETECTION":
         msg = st.text_input("Enter The Suspicious Email:")
         
@@ -52,11 +52,8 @@ def main():
                 # speak("ALERT This is A Spam Email")
                 
     else:
-        st.write("              ")
-        st.write(':red[Spam Email Detection]')
-        st.write("                ")
+        st.write(':green[Spam Email Detection]')
         st.write("Filter out Suspicious Emails")
-        st.write("                 ")
         st.write('Filter out you Suspicious By using this Spam Mail Detector Tool that will tell You Weather a Email is a Malicious Email or not. This Spam Email detector saves users valuable time and enhances productivity by ensuring that only relevant and legitimate messages reach their inboxes. Moreover, they serve as a frontline defense against various cyber threats, such as phishing attempts, malware distribution, and scams, thereby bolstering security and protecting sensitive information. Ultimately, This Email Spam detector fosters a positive email experience by delivering a clean and trustworthy inbox, thereby enhancing user satisfaction and trust in email communication.')
 
 main()
