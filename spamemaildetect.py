@@ -31,7 +31,7 @@ hide_st_style = """
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                background-color: #f1f1f1;
+                background-color: #000000;
                 text-align: center;
                 padding: 10px 0;
             }
