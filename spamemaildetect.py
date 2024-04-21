@@ -16,13 +16,19 @@ import numpy as np
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
 
-
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #000000;
+        
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 hide_st_style = """
             <style>
-            body {
-                background-color: #000000;
-                }
-            
             .stTitle {margin-bottom: -10px;}
             .stMarkdown {margin-top: -20px;}
             .logo-container {
