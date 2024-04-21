@@ -44,7 +44,7 @@ def main():
 
     with title_col:
         st.title(" :violet[SPAM EMAIL DETECTOR]")
-        st.write("Build By MAKSQUARE")
+        st.write(":green[Build By MAKSQUARE]")
 
     activities = ["SPAM EMAIL DETECTION", "About"]
     choice = st.sidebar.selectbox("CHOOSE YOUR REQUIREMENT", activities)
