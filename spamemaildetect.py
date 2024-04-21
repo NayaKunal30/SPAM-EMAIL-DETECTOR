@@ -16,8 +16,12 @@ import numpy as np
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
 
+
 hide_st_style = """
             <style>
+            body {
+                background-color: #000000;
+                }
             
             .stTitle {margin-bottom: -10px;}
             .stMarkdown {margin-top: -20px;}
@@ -34,9 +38,7 @@ hide_st_style = """
                 text-align: center;
                 padding: 10px 0;
             }
-            [theme]
-            primaryColor = "#00FFFB"
-            backgroundColor = "#000000"
+            
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
