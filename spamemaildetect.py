@@ -26,6 +26,15 @@ hide_st_style = """
             display: flex;
             align-items: center;
             }
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #f1f1f1;
+                text-align: center;
+                padding: 10px 0;
+            }
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
