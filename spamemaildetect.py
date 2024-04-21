@@ -16,7 +16,17 @@ import numpy as np
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
 
-st.beta_set_page_config(page_title="SPAM EMAIL DETECTOR", page_icon="CyberBlockLogo.png", layout="centered", initial_sidebar_state="auto", background_color="#000000")
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #000000 !important;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 hide_st_style = """
             <style>
