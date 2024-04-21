@@ -15,6 +15,20 @@ import numpy as np
 # def speak(text):
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            .stTitle {margin-bottom: -10px;}
+            .stMarkdown {margin-top: -20px;}
+            .logo-container {
+            display: flex;
+            align-items: center;
+            }
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # Load the model and CountVectorizer
 model = pickle.load(open('model.pkl', 'rb'))
