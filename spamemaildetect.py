@@ -1,24 +1,11 @@
-from random import choices
 import streamlit as st
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
-import numpy as np
-# These modules are causing issues when hosting on Streamlit
-# from win32com.client import Dispatch
-# import pythoncom
-# import win32api
-
-# No need to initialize COM objects when running on Streamlit
-# pythoncom.CoInitialize()
-
-# Commenting out the speak function as it requires win32com which is not compatible with Streamlit
-# def speak(text):
-#     speak = Dispatch(("SAPI.SpVoice"))
-#     speak.Speak(text)
 
 # Include FontAwesome
 st.markdown('<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">', unsafe_allow_html=True)
 
+# Set background color to black
 st.markdown(
     """
     <style>
@@ -38,40 +25,23 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-hide_st_style = """
-            <style>
-            .stTitle {margin-bottom: -10px;}
-            .stMarkdown {margin-top: -20px;}
-            .logo-container {
-            display: flex;
-            align-items: center;
-            }
-            .footer {
-                position: fixed;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: #000000;
-                text-align: center;
-                padding: 10px 0;
-            }
-            
-            </style>
-            """
-st.markdown(hide_st_style, unsafe_allow_html=True)
-
+# Set favicon with a custom logo (PNG)
+favicon_url = "https://example.com/favicon.png"
+st.markdown(f'<link rel="shortcut icon" type="image/png" href="{favicon_url}">', unsafe_allow_html=True)
 
 # Load the model and CountVectorizer
 model = pickle.load(open('model.pkl', 'rb'))
 cv = pickle.load(open('vectorizer.pkl', 'rb'))
 
 def main():
+    st.sidebar.markdown('<button id="sidebar-toggle" class="sidebar-toggle-btn"><i class="fas fa-bars"></i></button>', unsafe_allow_html=True)
+
     # Adjust the width of the logo column as needed
-    logo_col, title_col = st.columns([0.2, 1])  
-    
+    logo_col, title_col = st.columns([0.2, 1])
+
     with logo_col:
         # Adjust width as needed
-        st.image("CyberBlockLogo.png", width=100)  
+        st.image("CyberBlockLogo.png", width=100)
 
     with title_col:
         st.title(" :violet[SPAM EMAIL DETECTOR]")
@@ -89,12 +59,8 @@ def main():
             result = model.predict(vec)
             if result[0] == 0:
                 st.success("This is Not A Spam Email")
-                # Commenting out the speak function as it requires win32com which is not compatible with Streamlit
-                # speak("THANK GOD This is Not A Spam Email")
             else:
                 st.error("This is A Spam Email")
-                # Commenting out the speak function as it requires win32com which is not compatible with Streamlit
-                # speak("ALERT This is A Spam Email")
             
     else:
         st.write(':green[Spam Email Detection]')
@@ -103,8 +69,12 @@ def main():
         st.write("            ")
         st.write('Filter out you Suspicious By using this Spam Mail Detector Tool that will tell You Weather a Email is a Malicious Email or not. This Spam Email detector saves users valuable time and enhances productivity by ensuring that only relevant and legitimate messages reach their inboxes. Moreover, they serve as a frontline defense against various cyber threats, such as phishing attempts, malware distribution, and scams, thereby bolstering security and protecting sensitive information. Ultimately, This Email Spam detector fosters a positive email experience by delivering a clean and trustworthy inbox, thereby enhancing user satisfaction and trust in email communication.')
         st.write("            ")
+    
     st.markdown('<div class="footer">MAKSQUARE &copy; All Rights Reserved</div>', unsafe_allow_html=True)   
-main()
+
+if __name__ == "__main__":
+    main()
+
 
 
 
