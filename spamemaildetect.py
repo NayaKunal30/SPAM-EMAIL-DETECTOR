@@ -26,6 +26,13 @@ st.markdown(
         background-color: #000000 !important;
         color: white;
     }
+    .sidebar-toggle-btn {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        color: white;
+        font-size: 20px;
+    }
     </style>
     """,
     unsafe_allow_html=True
