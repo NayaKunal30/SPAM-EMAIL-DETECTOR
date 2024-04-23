@@ -1,7 +1,6 @@
 # SPAM-EMAIL-DETECTION
 Its a SPAM-EMAIL-DETECTOR SERVER Made by using Python and Python Libraries.
 
-
 How to Run ?:
 Install all the Libraries Mentioned in Requirements.txt:
 numpy
@@ -28,8 +27,9 @@ This Spam Email detector save users valuable time and enhance productivity by en
 Ultimately, This Email Spam detector foster a positive email experience by delivering a clean and trustworthy inbox, thereby enhancing user satisfaction and trust in email communication.
 
 
-TEAM : MAKSQUARE
-1.KOMAL PATHAK 
-2.KUNAL NAYAK
-3.ANMOL KR. PANDIT
-4.MAYANK
+
+
+LINKS TO REFER :
+SPAM EMAIL DETECTION APP : https://spam-email-detector-1.onrender.com/
+Youtube demo video : https://www.youtube.com/watch?v=NYnaVefzKcg
+github-page link: https://github.com/NayaKunal30/SPAM-EMAIL-DETECTOR
