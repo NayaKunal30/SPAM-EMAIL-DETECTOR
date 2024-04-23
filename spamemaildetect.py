@@ -3,6 +3,7 @@ import streamlit as st
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 import numpy as np
+import base64
 # These modules are causing issues when hosting on Streamlit
 # from win32com.client import Dispatch
 # import pythoncom
@@ -53,6 +54,20 @@ hide_st_style = """
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio autoplay="true">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+            </audio>
+            """
+        st.markdown(
+            md,
+            unsafe_allow_html=True,
+        )
+
 
 # Load the model and CountVectorizer
 model = pickle.load(open('model.pkl', 'rb'))
@@ -81,10 +96,16 @@ def main():
             vec = cv.transform(data).toarray()
             result = model.predict(vec)
             if result[0] == 0:
+                autoplay_audio("notspam.mp3")
+                # st.components.v1.html(f'<audio autoplay><source src="{audio_file_path}" type="audio/mp3"></audio>')
+                # st.markdown(f"""<script>var audio=new Audio("{audio_file_path}");audio.play()<script>""", unsafe_allow_html=True)
+                # st.markdown(f"""<script>var audio=new Audio("{audio_file_path}");
+                #          audio.play()<script>""")
                 st.success("This is Not A Spam Email")
                 # Commenting out the speak function as it requires win32com which is not compatible with Streamlit
                 # speak("THANK GOD This is Not A Spam Email")
             else:
+                autoplay_audio("spam.mp3")
                 st.error("This is A Spam Email")
                 # Commenting out the speak function as it requires win32com which is not compatible with Streamlit
                 # speak("ALERT This is A Spam Email")
