@@ -17,7 +17,7 @@ import base64
 #     speak = Dispatch(("SAPI.SpVoice"))
 #     speak.Speak(text)
 
-
+st.set_page_config(page_title="Cyber-Block", page_icon="CyberBlockLogo.png")
 st.markdown(
     """
     <style>
